@@ -34,7 +34,8 @@ comments :
 # Internal nav
 nav:
 https://weirdkittyz.github.io/YZiPhotoJournal/
-  - GALLERY: "https://weirdkittyz.github.io/YZiPhotoJournal/gallery/"  
+  - GALLERY I: "https://weirdkittyz.github.io/YZiPhotoJournal/gallery/"
+  - GALLERY II: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryII/" 
   - JOURNAL: "https://weirdkittyz.github.io/YZiPhotoJournal/journal/"
   - ABOUT: "https://weirdkittyz.github.io/YZiPhotoJournal/about/"
 
