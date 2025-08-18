@@ -31,10 +31,16 @@ comments :
 # Internal nav
 nav:
   - Galleries:
-      - GALLERY I: "https://weirdkittyz.github.io/YZiPhotoJournal/gallery/"
-      - GALLERY II: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryII/"
-      - GALLERY III: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryIII/"
-  - About: "https://weirdkittyz.github.io/YZiPhotoJournal/about/"
+      - title: GALLERY I
+        url: "https://weirdkittyz.github.io/YZiPhotoJournal/gallery/"
+      - title: GALLERY II
+        url: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryII/"
+      - title: GALLERY III
+        url: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryIII/"
+  - About:
+      title: ABOUT
+      url: "https://weirdkittyz.github.io/YZiPhotoJournal/about/"
+
 
 # All translation keys
 translations:
