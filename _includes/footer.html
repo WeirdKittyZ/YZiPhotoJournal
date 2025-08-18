@@ -3,6 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
         <ul class="list-inline text-center">
 
           {% if site.instagram_username %}
@@ -10,10 +11,9 @@
             <a href="https://instagram.com/{{ site.instagram_username }}" data-toggle="tooltip" title="Instagram">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
-               toggle="tooltip" title="GitHub">
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                         <a href="mailto:{{ site.email }}" data-toggle="tooltip" target="_blank" title="Email">
               <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-githubclass="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
               </span>
@@ -24,12 +24,11 @@
         </ul>
 
         <p class="copyright text-muted">
-          &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+          Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
         </p>
-
         <center>
           <h6>
-            <p>Powered by <a href="ithub.com/jekyll/.</p>
+            <p>Powered by https://github.com/jekyll/.</p>
           </h6>
         </center>
       </div>
