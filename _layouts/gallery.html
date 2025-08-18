@@ -15,7 +15,7 @@
           <div class="site-heading">
             <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
             <hr class="small">
-            <span class="subheading">{{ page.description }}</span>
+           .description }}</span>
           </div>
         </div>
       </div>
@@ -23,11 +23,16 @@
   </header>
 
   <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      {{ content }}
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
   <section id="content" role="main">
     <div class="wrapper">
       <h2>{{ page.title }}</h2>
-
-      <!-- Gallery Section -->
       <div class="gallery masonry-gallery">
         {% for image in page.images %}
         <figure class="gallery-item">
@@ -55,6 +60,8 @@
 
   <!-- Scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{{ site.baseurl }}/js/main.min.js"></script>
   <script src="{{ site.baseurl }}/js/retina.min.js"></script>
   <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
   <script src="{{ site.baseurl }}/js/jquery.tinycarousel.min.js"></script>
