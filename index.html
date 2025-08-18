@@ -63,11 +63,13 @@ images:
       {% endif %}
       {% if site.github_username %}
       <li>
-        https://github.com/{{ site.github_username }}
+        <a href="https://github.com/{{ site.github_username }}" style="color:#dddddd; target="_blank" title="Github">
+         <i class="fa fa-github"></i>
+        </span>
       </li>
       {% endif %}
       <li>
-        <a href="mailto:{{ site.email }}" target="_blank" title="Email">
+        <a href="mailto:{{ site.email }}"  style="color:#dddddd; target="_blank" title="Email">
           <i class="fa fa-envelope-o"></i>
         </a>
       </li>
