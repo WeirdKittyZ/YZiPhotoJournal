@@ -23,40 +23,41 @@
   </header>
 
   <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      {{ content }}
+<div class="container">
+  <div class="row">
+    {{ content }}
+  </div>
+</div>
+
+<!-- Gallery Section -->
+<section id="content" role="main">
+  <div class="wrapper">
+    <h2>{{ page.title }}</h2>
+    <div class="gallery masonry-gallery">
+      {% for image in page.images %}
+      <figure class="gallery-item">
+        <figure class="effect-selena">
+          <header class="gallery-icon">
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
+                   alt="{% if image.gallery-name %}{{ image.gallery-name }}{% else %}Gallery{% endif %}"
+                   class="responsive-img">
+            </a>
+          </header>
+          {% if image.gallery-name or image.gallery-date %}
+          <figcaption class="gallery-caption">
+            <div class="entry-summary">
+              {% if image.gallery-name %}<h3>{{ image.gallery-name }}</h3>{% endif %}
+              {% if image.gallery-date %}<p>{{ image.gallery-date }}</p>{% endif %}
+            </div>
+          </figcaption>
+          {% endif %}
+        </figure>
+      </figure>
+      {% endfor %}
     </div>
   </div>
-
-  <!-- Gallery Section -->
-  <section id="content" role="main">
-    <div class="wrapper">
-      <h2>{{ page.title }}</h2>
-      <div class="gallery masonry-gallery">
-        {% for image in page.images %}
-        <figure class="gallery-item">
-          <figure class="effect-selena">
-            <header class="gallery-icon">
-              <a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
-                <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
-                     alt="{% if image.gallery-name %}{{ image.gallery-name }}{% else %}Gallery{% endif %}">
-              </a>
-            </header>
-            {% if image.gallery-name or image.gallery-date %}
-            <figcaption class="gallery-caption">
-              <div class="entry-summary">
-                {% if image.gallery-name %}<h3>{{ image.gallery-name }}</h3>{% endif %}
-                {% if image.gallery-date %}<p>{{ image.gallery-date }}</p>{% endif %}
-              </div>
-            </figcaption>
-            {% endif %}
-          </figure>
-        </figure>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
+</section>
 
   <!-- Scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
