@@ -4,21 +4,17 @@ email: ""
 description: "YZiPhotoJournal"
 url: "https://weirdkittyz.github.io"
 baseurl: "/YZiPhotoJournal"
-facebook_username: ""
-twitter_username: ""
+
+
 instagram_username: ""
 github_username:  ""
-deviantart_username: ""
-flickr_username: ""
-discus_shortname: ""
 share: true
 
 # Owner/author information
 owner:
-  name:   photorama
-  avatar: avatar.png
+  name:   YZi
   favicon: favicon.ico
-  info: photography website template
+  info: YZi's Photo Journal
 
 # Settings for comments helper
 # Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
@@ -48,7 +44,7 @@ destination:      	 ./_site
 port:             	 4000
 
 
-# Build settings
+# Build settings (journal)
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
@@ -61,7 +57,7 @@ gems:
  - jekyll-paginate
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
-# SiteMap
+# SiteMap (search engines)
 sitemap:
     file: "/sitemap.xml"
     exclude:
