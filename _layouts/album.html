@@ -31,21 +31,26 @@ layout: default
         <header class="gallery-icon">
           <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
              class="popup"
-                         data-caption="{{ image.copyright }}">
-            <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" alt="{{ image.caption }}">
+             {% if image.caption %}title="{{ image.caption }}"{% endif %}
+             {% if image.copyright %}data-caption="{{ image.copyright }}"{% endif %}>
+            <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
+                 alt="{% if image.caption %}{{ image.caption }}{% else %}Image{% endif %}">
           </a>
         </header>
+        {% if image.caption or image.copyright %}
         <figcaption class="gallery-caption">
-          <div class="entry-summary" id="{{ image.caption }}">
-            <h3>{{ image.caption }}</h3>
-            <p>{{ image.copyright }}</p>
+          <div class="entry-summary" id="{{ image.caption | default: 'image' }}">
+            {% if image.caption %}<h3>{{ image.caption }}</h3>{% endif %}
+            {% if image.copyright %}<p>{{ image.copyright }}</p>{% endif %}
           </div>
         </figcaption>
+        {% endif %}
       </figure>
       {% endfor %}
     </div>
   </div>
 </div>
+
 
 <!-- Scripts -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -66,14 +71,17 @@ layout: default
       type: 'image',
       gallery: {
         enabled: true,
-        navigateByImgClick: true,
-        preload: [0, 1] // Preload previous and next images
+        navigateByImgClick: false, // disables click-to-next
+        preload: [0, 1]
       },
       image: {
         titleSrc: function(item) {
-          return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          const title = item.el.attr('title');
+          const caption = item.el.attr('data-caption');
+          return (title ? title : '') + (caption ? '&nbsp;' + caption : '');
         }
       }
     });
   });
 </script>
+
