@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/selena.css">
+</head>
+
+<body class="gallery">
+  <!-- Page Header -->
+  <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+            <hr class="small">
+            <span class="subheading">{{ page.description }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section id="content" role="main">
+    <div class="wrapper">
+      <h2>{{ page.title }}</h2>
+
+      <!-- Gallery Section -->
+      <div class="gallery masonry-gallery">
+        {% for image in page.images %}
+        <figure class="gallery-item">
+          <figure class="effect-selena">
+            <header class="gallery-icon">
+              <a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+                <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
+                     alt="{% if image.gallery-name %}{{ image.gallery-name }}{% else %}Gallery{% endif %}">
+              </a>
+            </header>
+            {% if image.gallery-name or image.gallery-date %}
+            <figcaption class="gallery-caption">
+              <div class="entry-summary">
+                {% if image.gallery-name %}<h3>{{ image.gallery-name }}</h3>{% endif %}
+                {% if image.gallery-date %}<p>{{ image.gallery-date }}</p>{% endif %}
+              </div>
+            </figcaption>
+            {% endif %}
+          </figure>
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <script src="{{ site.baseurl }}/js/jquery.tinycarousel.min.js"></script>
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+</body>
+</html>
