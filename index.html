@@ -57,12 +57,17 @@ images:
 				<canvas id="kenburns"></canvas>
 
 <!--This loop goes through each image in the images list and displays it -->
-{% for image in page.images %}
-  <figure class="gallery-item">
-    <header class='gallery-icon'>
-      <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}">
-    </header>
-  </figure>
+{% for image in page.images %}  	
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+	
+				</header>	
+				</figure>
+
 {% endfor %}
 
 				</div>
