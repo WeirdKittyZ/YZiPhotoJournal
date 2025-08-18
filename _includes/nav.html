@@ -1,7 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="margin-right:1em; z-index: 1;">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <i class="fa fa-bars fa-lg"></i>
@@ -11,30 +10,26 @@
       </a>
     </div>
 
-    <!-- Navigation Links -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
 
-        {% for nav_item in site.nav %}
-          {% assign label = nav_item | first %}
+                 {% assign label = nav_item | first %}
           {% assign value = nav_item[label] %}
 
-          {% if value contains 'http' %}
-            <!-- Regular link -->
-            <li {% if page.active == label | downcase %}class="active"{% endif %}>
-              <a href="{{ value }}">{{ label }}</a>
-            </li>
-          {% else %}
+          {% if value[0].url %}
             <!-- Dropdown menu -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ label }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 {% for sub_item in value %}
-                  {% assign sub_label = sub_item | first %}
-                  {% assign sub_url = sub_item[sub_label] %}
-                  <li><a href="{{ sub_url }}">{{ sub_label }}</a></li>
+                  <li><a href="{{ sub_item.url }}">{{ sub_item.title }}</a></li>
                 {% endfor %}
               </ul>
+            </li>
+          {% else %}
+            <!-- Regular link -->
+            <li>
+              <a href="{{ value.url }}">{{ value.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
