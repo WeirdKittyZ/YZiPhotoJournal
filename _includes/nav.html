@@ -17,7 +17,7 @@
           {% assign label = nav_item | first %}
           {% assign value = nav_item[label] %}
 
-          {% if value[0].url %}
+          {% if value[0] %}
             <!-- Dropdown menu -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ label }} <b class="caret"></b></a>
