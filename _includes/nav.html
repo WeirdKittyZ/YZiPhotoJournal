@@ -13,7 +13,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
 
-                 {% assign label = nav_item | first %}
+        {% for nav_item in site.nav %}
+          {% assign label = nav_item | first %}
           {% assign value = nav_item[label] %}
 
           {% if value[0].url %}
