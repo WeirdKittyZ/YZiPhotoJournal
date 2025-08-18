@@ -13,25 +13,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
 
-        {% for nav_item in site.nav %}
-          {% assign label = nav_item | first %}
-          {% assign value = nav_item[label] %}
-
-          {% if value[0] %}
-            <!-- Dropdown menu -->
+        {% for item in site.nav %}
+          {% if item.dropdown %}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ label }} <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                {% for sub_item in value %}
-                  <li><a href="{{ sub_item.url }}">{{ sub_item.title }}</a></li>
+                {% for sub in item.dropdown %}
+                  <li><a href="{{ sub.url }}">{{ sub.title }}</a></li>
                 {% endfor %}
               </ul>
             </li>
           {% else %}
-            <!-- Regular link -->
-            <li>
-              <a href="{{ value.url }}">{{ value.title }}</a>
-            </li>
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
           {% endif %}
         {% endfor %}
 
