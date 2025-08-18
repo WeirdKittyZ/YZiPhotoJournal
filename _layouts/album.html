@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+          <hr class="small">
+          <span class="subheading">{{ page.description }}</span>
+             </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    {{ content }}
+  </div>
+
+  <!-- Album Gallery -->
+  <div class="wrapper">
+    <h2>{{ page.album-title }}</h2>
+    <div class="gallery masonry-gallery">
+      {% for image in page.images %}
+      <figure class="gallery-item">
+        <header class="gallery-icon">
+          <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"
+             class="popup"
+                         data-caption="{{ image.copyright }}">
+            <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" alt="{{ image.caption }}">
+          </a>
+        </header>
+        <figcaption class="gallery-caption">
+          <div class="entry-summary" id="{{ image.caption }}">
+            <h3>{{ image.caption }}</h3>
+            <p>{{ image.copyright }}</p>
+          </div>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/js/main.min.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+<script src="{{ site.baseurl }}/js/retina.min.js"></script>
+<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.tinycarousel.min.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('a.popup').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0, 1]
+      },
+      function(item) {
+          return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+        }
+      }
+    });
+  });
+</script>
