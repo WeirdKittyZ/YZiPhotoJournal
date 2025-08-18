@@ -13,20 +13,25 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
 
-        {% for item in site.nav %}
-          {% if item.dropdown %}
+        {% for nav_item in site.nav %}
+          {% assign label = nav_item | first %}
+          {% assign value = nav_item[label] %}
+
+          {% if value[0] %}
+            <!-- Dropdown menu -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Galleries <span class="caret"></span>
-              </a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ label }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/YZiPhotoJournal/gallery/">GALLERY I</a></li>
-                <li><a href="/YZiPhotoJournal/galleryII/">GALLERY II</a></li>
-                <li><a href="/YZiPhotoJournal/galleryIII/">GALLERY III</a></li>
+                {% for sub_item in value %}
+                  <li><a href="{{ sub_item.url }}">{{ sub_item.title }}</a></li>
+                {% endfor %}
               </ul>
             </li>
           {% else %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            <!-- Regular link -->
+            <li>
+              <a href="{{ value.url }}">{{ value.title }}</a>
+            </li>
           {% endif %}
         {% endfor %}
 
