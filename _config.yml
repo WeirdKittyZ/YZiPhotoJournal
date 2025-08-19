@@ -30,17 +30,10 @@ comments :
 
 # Internal nav
 nav:
-  - title: Galleries
-    dropdown:
-      - title: GALLERY I
-        url: /YZiPhotoJournal/gallery/
-      - title: GALLERY II
-        url: /YZiPhotoJournal/galleryII/
-      - title: GALLERY III
-        url: /YZiPhotoJournal/galleryIII/
-  - title: About
-    url: /YZiPhotoJournal/about/
-
+  - GALLERY I: "https://weirdkittyz.github.io/YZiPhotoJournal/gallery/" 
+  - GALLERY II: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryII/"
+  - GALLERY III: "https://weirdkittyz.github.io/YZiPhotoJournal/galleryIII/"
+  - ABOUT: "https://sunbliss.github.io/photorama/about/"
 
 # All translation keys
 translations:
