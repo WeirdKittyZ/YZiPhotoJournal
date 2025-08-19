@@ -2,36 +2,33 @@
 /* Dropdown menu styling */
 .navbar .dropdown-menu {
     min-width: 200px;
-    padding: 10px 15px;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 133, 161, 0.25);
-    box-shadow: 0 2px 8px rgba(0, 133, 161, 0.2);
-    font-size: 16px;
+    padding: 10px 0;
+    background-color: #fff;
+    border: 1px solid rgba(0, 133, 161, 0.75);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     z-index: 1000;
 }
 
-/* Dropdown items */
+/* Ensure dropdown menu height fits all items */
 .navbar .dropdown-menu > li > a {
-    padding: 8px 12px;
-    color: #0085a1;
-    text-decoration: none;
-    display: block;
+    padding: 8px 20px;
+    color: #333;
     white-space: nowrap;
 }
 
 /* Hover effect for dropdown items */
 .navbar .dropdown-menu > li > a:hover {
     background-color: rgba(0, 133, 161, 0.1);
-    color: #005f73;
+    color: #0085a1;
 }
 
-/* Ensure dropdown is fully visible */
+/* Prevent scrollbars by allowing dropdown to expand */
 .navbar .dropdown:hover .dropdown-menu {
     display: block;
+    position: absolute;
 }
 
-/* Prevent scrollbars by allowing enough space */
+/* Optional: Add transition for smooth appearance */
 .navbar .dropdown-menu {
-    max-height: none;
-    overflow: visible;
+    transition: all 0.3s ease;
 }
