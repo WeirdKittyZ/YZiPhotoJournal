@@ -1,36 +1,37 @@
 
-/* Custom Dropdown Styles */
-.navbar-nav > li.dropdown:hover > .dropdown-menu {
+/* Dropdown menu styling */
+.navbar .dropdown-menu {
+    min-width: 200px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 133, 161, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 133, 161, 0.2);
+    font-size: 16px;
+    z-index: 1000;
+}
+
+/* Dropdown items */
+.navbar .dropdown-menu > li > a {
+    padding: 8px 12px;
+    color: #0085a1;
+    text-decoration: none;
     display: block;
-    margin-top: 0;
-    border-radius: 0;
-    box-shadow: 0 4px 6px rgba(0, 133, 161, 0.3);
-    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
-.navbar-nav > li.dropdown > a.dropdown-toggle {
-    background-color: transparent;
-    color: rgba(0, 133, 161, 0.85);
-}
-
-.navbar-nav > li.dropdown > a.dropdown-toggle:hover {
+/* Hover effect for dropdown items */
+.navbar .dropdown-menu > li > a:hover {
     background-color: rgba(0, 133, 161, 0.1);
-    color: rgba(0, 133, 161, 1);
+    color: #005f73;
 }
 
-.dropdown-menu {
-    background-color: #fff;
-    border: 1px solid rgba(0, 133, 161, 0.2);
-    padding: 0;
+/* Ensure dropdown is fully visible */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-.dropdown-menu > li > a {
-    color: rgba(0, 133, 161, 0.85);
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-menu > li > a:hover {
-    background-color: rgba(0, 133, 161, 0.1);
-    color: rgba(0, 133, 161, 1);
+/* Prevent scrollbars by allowing enough space */
+.navbar .dropdown-menu {
+    max-height: none;
+    overflow: visible;
 }
