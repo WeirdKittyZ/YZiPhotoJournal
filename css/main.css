@@ -61,7 +61,7 @@ hr.small {
 .navbar-custom .nav li a {
   color: white;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -83,7 +83,7 @@ hr.small {
     padding: 20px;
   }
   .navbar-custom .nav li a:hover{
-    color: #0085a1;
+    color: #e64c05;
   }
 }
 @media only screen and (min-width: 1170px) {
