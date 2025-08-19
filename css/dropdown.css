@@ -1,5 +1,5 @@
 
-/* Dropdown menu styling */
+/* Ensure dropdown menu appears on click (Bootstrap default behavior) */
 .navbar .dropdown-menu {
     display: none;
     position: absolute;
@@ -7,18 +7,18 @@
     min-width: 200px;
     padding: 10px 0;
     margin-top: 0;
-    border: 1px solid rgba(0, 133, 161, 0.25);
-    box-shadow: 0 2px 8px rgba(0, 133, 161, 0.15);
+    border: 1px solid rgba(0, 133, 161, 0.75);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     z-index: 1000;
 }
 
-/* Show dropdown on hover */
-.navbar .dropdown:hover .dropdown-menu {
+/* Show dropdown on click using Bootstrap's open class */
+.navbar .dropdown.open .dropdown-menu {
     display: block;
 }
 
-/* Dropdown items */
-.navbar .dropdown-menu li a {
+/* Style dropdown items */
+.navbar .dropdown-menu > li > a {
     display: block;
     padding: 8px 20px;
     color: #0085a1;
@@ -27,13 +27,14 @@
 }
 
 /* Hover effect for dropdown items */
-.navbar .dropdown-menu li a:hover {
+.navbar .dropdown-menu > li > a:hover {
     background-color: rgba(0, 133, 161, 0.1);
     color: #005f73;
 }
 
-/* Ensure dropdown expands fully without scrollbars */
+/* Prevent scrollbars by setting height to fit all items */
 .navbar .dropdown-menu {
+    height: auto;
     max-height: none;
     overflow: visible;
 }
