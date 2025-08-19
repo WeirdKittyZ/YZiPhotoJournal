@@ -1,51 +1,52 @@
-<!-- CSS -->
-
-<!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
-
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-<link rel="stylesheet" href="{{ "/css/galleries.css" | prepend: site.baseurl }}">
-<link rel="stylesheet" href="{{ "/css/super-search.css" | prepend: site.baseurl }}">
-<link rel="stylesheet" href="{{ "/css/magnificpopup.css" | prepend: site.baseurl }}">
-
-<!-- Custom Fonts -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="{{ "/css/dropdown.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
+</head>
+<body>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="margin-right:1em; z-index: 1;">
-  <div class="container-fluid">
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <i class="fa fa-bars fa-lg"></i>
-      </button>
-      <a href="{{ site.baseurl }}/" title="HOME">
-        <img src="{{ site.baseurl }}/logo.png" alt="logo" style="width:150px;cursor:pointer;margin-top:15px;" />
-      </a>
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+            <a href="{{ site.baseurl }}/" title="HOME"><img src="{{ site.baseurl }}/logo.png" alt="logo" style="width:150px;cursor:pointer;margin-top:15px;"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
+              {% for nav_item in site.nav %}
+                {% if nav_item.dropdown %}
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      {{ nav_item.title }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      {% for sub_item in nav_item.dropdown %}
+                        <li><a href="{{ sub_item.url }}">{{ sub_item.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  {% assign lowercase_title = nav_item.title | downcase %}
+                  {% if page.active == lowercase_title %}
+                    <li class="active"><a href="{{ nav_item.url }}">{{ nav_item.title }}</a></li>
+                  {% else %}
+                    <li><a href="{{ nav_item.url }}">{{ nav_item.title }}</a></li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
-
-        {% for item in site.nav %}
-          {% if item.dropdown %}
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                {% for sub in item.dropdown %}
-                  <li><a href="{{ sub.url }}">{{ sub.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-          {% else %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-
-      </ul>
-    </div>
-  </div>
+    <!-- /.container -->
 </nav>
+</body>
+</html>
