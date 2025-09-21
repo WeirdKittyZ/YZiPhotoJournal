@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://weirdkittyz.github.io/YZiPhotoJournal/sitemap.xml
