@@ -11,7 +11,7 @@ email: "zyjzjq99@sina.com"
 share: true
 
 # SEO plugins
-plugins:
+gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
