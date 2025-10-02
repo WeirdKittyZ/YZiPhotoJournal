@@ -1,16 +1,21 @@
 # Site settings
-title: YZi's Photo Journal
-email: ""
-description: "YZi's Photo Journal"
+title: "YZi's Photo Journal"
+description: "YZi's photography work and photo journal, featuring nature, animal & human, and city galleries."
 url: "https://weirdkittyz.github.io"
 baseurl: "/YZiPhotoJournal"
 
-
+# social
 instagram_username: "z._4869"
-github_username:  "WeirdKittyZ"
+github_username: "WeirdKittyZ"
 email: "zyjzjq99@sina.com"
 share: true
 
+# SEO plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  
 # Owner/author information
 owner:
   name:   YZi
