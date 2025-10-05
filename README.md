@@ -1,4 +1,11 @@
 # Y &middot; Zi's Photo Journal
+This is YZi's photo journal, currently featuring three active galleries:
+
+- Gallery I: **WHISPERS OF THE WILD**
+- Gallery II: **TRACES OF THE SOUL**
+- Gallery III: **ECHOES OF THE CONCRETE**
+  
+Feel free to use the photos with watermarks, as long as proper citation and acknowledgement are provided. If you're interested in watermark-free versions, please reach out via email.
 
 This website uses the [PHOTORAMA](https://github.com/sunbliss/photorama) theme. Check out this page for download instructions.
 
