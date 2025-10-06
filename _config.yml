@@ -1,6 +1,7 @@
 # Site settings
 title: "YZi's Photo Journal"
-description: "YZi's photography work and photo journal, featuring nature, animal & human, and city galleries."
+description: "YZi's photography website, featuring the beauty of nature, the spirit of animals and humans, and the rhythm of city life through curated galleries."
+keywords: ["Yijia Zi","Yijia Zi photography","YZiPhotoJournal", "Yijia Zi Github", "YZi Github"]
 url: "https://weirdkittyz.github.io"
 baseurl: "/YZiPhotoJournal"
 
